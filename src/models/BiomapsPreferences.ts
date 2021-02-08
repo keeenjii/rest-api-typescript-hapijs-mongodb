@@ -3,11 +3,11 @@ import {Schema, model, Document} from 'mongoose'
 
 export interface IBiomapsPreferences extends Document {
     languageCode: string;
-    useSexagesimalCoordinates: string;
+    useSexagesimalCoordinates: Boolean;
     coodinateDecimalPrecision: string;
-    showBatteriesSeparately: string;
+    showBatteriesSeparately: Boolean;
     unitSystem: string;
-    deafultAreaPreferences: typeof areaPreferences;
+    defaultAreaPreferences: typeof areaPreferences;
 }
 
 export const biomapsPreferences = new Schema ({
@@ -33,6 +33,8 @@ export const biomapsPreferences = new Schema ({
     },
     'defaultAreaPreferences':{
         type:areaPreferences,
-        required: true
+        required: false //TODO: set true
     }
 })
+
+export default model<IBiomapsPreferences>("BiomapsPreferences", biomapsPreferences)

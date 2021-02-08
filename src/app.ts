@@ -1,7 +1,5 @@
 import {Server} from '@hapi/hapi'
 import {userRoutes} from './routes/user.routes'
-import {areaPrefsRoutes} from './routes/areaPrefs.routes'
-import {biomapsPrefsRoutes} from './routes/biomapsPrefs.routes'
 
 export const init = async () => {
     const server:Server = new Server({
@@ -10,6 +8,7 @@ export const init = async () => {
     });
     
     userRoutes(server);
+
 
     await server.start();
     console.log('Servidor rodando em %s', server.info.uri);

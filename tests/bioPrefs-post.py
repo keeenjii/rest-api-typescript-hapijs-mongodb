@@ -5,20 +5,15 @@ header = {
 }
 
 body = {
-    'name':'leon',
-    'email': 'teste@teste',
-    'password': 'tralala',
-    'biomapsPrefs': {
         'languageCode':'BREZIL',
         'useSexagesimalCoordinates':True,
         'coordinateDecimalPrecision':'side',
         'showBatteriesSeparately': True,
         'unitSystem': 'SI',
     }
-}
 
-url = "http://localhost:3000" + "/users"
+url = "http://localhost:3000" + "/users" +  "/601b1f247ec7693b34158ed2/biomapsPrefs"
 
-response = requests.post(url, data=body)
+response = requests.put(url, data=body)
 print(response.text)
 print(response.status_code)

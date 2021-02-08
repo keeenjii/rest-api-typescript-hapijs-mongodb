@@ -23,10 +23,8 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    biomapsPrefs: {
-        type: biomapsPreferences,
-        required: false
-    }
+    biomapsPrefs: biomapsPreferences,
+    
     //TODO: set required field to true
 }, {
     timestamps: true

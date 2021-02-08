@@ -1,5 +1,5 @@
 import requests
 
-url = 'http://localhost:3000/users/' + '601be9c3a5eddf3354507dd2'
+url = 'http://localhost:3000/users/' + '601d48500cee8543a83b10c4'
 response = requests.delete(url)
 print(response.json())

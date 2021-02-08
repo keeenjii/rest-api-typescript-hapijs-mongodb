@@ -7,7 +7,7 @@ export const createUser = async (request: Request, h: ResponseToolkit): Promise<
         const userSaved = await user.save();
         return h.response(userSaved);
     }catch(error){
-        return h.response(error).code(500)
+        return h.response(error).code(501)
     }    
 }
 
